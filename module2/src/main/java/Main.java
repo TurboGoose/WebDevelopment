@@ -1,17 +1,19 @@
+import accounts.AccountService;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.MirrorServlet;
+import servlets.SignInServlet;
+import servlets.SignUpServlet;
 
-import javax.servlet.Servlet;
 import java.util.logging.Logger;
 
-public class App1 {
+public class Main {
     public static void main(String[] args) {
-        Servlet servlet = new MirrorServlet();
+        AccountService service = AccountService.getInstance();
 
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        contextHandler.addServlet(new ServletHolder(servlet), "/mirror");
+        contextHandler.addServlet(new ServletHolder(new SignUpServlet(service)), "/signup");
+        contextHandler.addServlet(new ServletHolder(new SignInServlet(service)), "/signin");
 
         Server server = new Server(8080);
         server.setHandler(contextHandler);
@@ -20,8 +22,8 @@ public class App1 {
             server.start();
             Logger.getGlobal().info("Server started");
             server.join();
-        } catch (Exception exc) {
-            exc.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

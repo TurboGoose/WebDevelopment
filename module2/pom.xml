@@ -22,7 +22,6 @@
             <artifactId>jetty-server</artifactId>
             <version>9.3.0.M0</version>
         </dependency>
-
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
@@ -39,7 +38,7 @@
                     <finalName>server</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>App2</mainClass>
+                            <mainClass>Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -50,5 +49,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -1,4 +1,4 @@
-package dbservice.datasets;
+package dbservicejdbc.datasets;
 
 public class User {
     private final long id;

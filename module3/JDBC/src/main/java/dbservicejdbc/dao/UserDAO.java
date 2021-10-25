@@ -1,7 +1,7 @@
-package dbservice.dao;
+package dbservicejdbc.dao;
 
-import dbservice.datasets.User;
-import dbservice.executor.Executor;
+import dbservicejdbc.datasets.User;
+import dbservicejdbc.executor.Executor;
 
 import java.sql.Connection;
 import java.sql.SQLException;

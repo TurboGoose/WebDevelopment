@@ -1,7 +1,8 @@
-package dbservice;
+package dbservicejdbc;
 
-import dbservice.dao.UserDAO;
-import dbservice.datasets.User;
+import dbservicejdbc.dao.DAOException;
+import dbservicejdbc.dao.UserDAO;
+import dbservicejdbc.datasets.User;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,7 +11,7 @@ public class DBService {
     private final Connection connection = ConnectionFactory.get(ConnectionFactory.ConnectionType.POSTGRES);
     private final UserDAO dao = new UserDAO(connection);
 
-    public long addUser(String name) throws DAOException{
+    public long addUser(String name) throws DAOException {
         try {
             connection.setAutoCommit(false);
             dao.addUser(name);

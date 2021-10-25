@@ -1,8 +1,8 @@
-import dbservice.DAOException;
-import dbservice.DBService;
-import dbservice.datasets.User;
+import dbservicejdbc.dao.DAOException;
+import dbservicejdbc.DBService;
+import dbservicejdbc.datasets.User;
 
-public class App3 {
+public class Main {
     public static void main(String[] args) {
         DBService dbService = new DBService();
         dbService.printConnectionInfo();

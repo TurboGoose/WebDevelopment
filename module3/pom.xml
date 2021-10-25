@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>module3</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>JDBC</module>
+        <module>ORM</module>
+        <module>task</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -22,33 +28,5 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.23</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.3.8.Final</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <finalName>server</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <finalName>server</finalName>
-                    <archive>
-                        <manifest>
-                            <mainClass>App3</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

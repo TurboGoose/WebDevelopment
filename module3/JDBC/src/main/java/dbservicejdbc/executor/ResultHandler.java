@@ -1,4 +1,4 @@
-package dbservice.executor;
+package dbservicejdbc.executor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
