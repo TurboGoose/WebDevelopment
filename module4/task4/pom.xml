@@ -25,7 +25,7 @@
                     <finalName>server</finalName>
                     <archive>
                         <manifest>
-                            <mainClass><!-- your class name here --></mainClass>
+                            <mainClass>Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
